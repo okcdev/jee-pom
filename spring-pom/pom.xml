@@ -12,7 +12,7 @@
     <artifactId>spring-pom</artifactId>
     <modules>
         <module>spring-boot-websocket</module>
-        <module>spring-boot-examples</module>
+        <module>spring-boot-shiro</module>
     </modules>
 
 

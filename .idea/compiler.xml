@@ -8,9 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jee-share-basic" />
         <module name="jee-share-utils" />
-        <module name="spring-boot-examples" />
+        <module name="spring-boot-shiro" />
         <module name="spring-boot-websocket" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-boot-examples" target="1.8" />
+      <module name="spring-redis" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
