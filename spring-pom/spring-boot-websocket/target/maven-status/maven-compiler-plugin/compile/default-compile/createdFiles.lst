@@ -1,6 +1,0 @@
-cn\feng\dev\spring\boot\websocket\WebSocketApplication.class
-cn\feng\dev\spring\boot\websocket\web\WebSocketController.class
-cn\feng\dev\spring\boot\websocket\entity\RequestMessage.class
-cn\feng\dev\spring\boot\websocket\config\WebMvcConfig.class
-cn\feng\dev\spring\boot\websocket\config\WebSocketConfig.class
-cn\feng\dev\spring\boot\websocket\entity\ResponseMessage.class

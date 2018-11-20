@@ -7,8 +7,13 @@
 package cn.feng.dev.shiro.web;
 
 import cn.feng.dev.entity.ResultBean;
+import cn.feng.dev.shiro.db.UserBean;
+import cn.feng.dev.shiro.service.AdminService;
+import cn.feng.dev.shiro.utls.FengUtls;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,15 +29,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
     static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
-    @RequestMapping("/login")
-    public ResultBean<Integer> login(){
-        return new ResultBean(ResultBean.RESULT_SUCCESS, "登录成功", 1);
-    }
+    @Autowired
+    AdminService adminService;
 
+    @RequestMapping("/login")
+    public ResultBean<String> login(@RequestParam("username") String username,
+                                     @RequestParam("password") String password) {
+        UserBean userBean = adminService.getUser(username);
+        if (userBean.getPassword().equals(password)) {
+            return new ResultBean<>(ResultBean.RESULT_SUCCESS, "Login success", FengUtls.sign(username, password));
+        } else {
+            throw new UnauthorizedException();
+        }
+    }
     @RequestMapping("/401")
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public ResultBean<Integer> unauthorized() {
-        return new ResultBean<>(401, "invalid authKey or not login", null);
+        return new ResultBean<>(ResultBean.RESULT_EXCEPTION, "invalid authKey or not login", null);
     }
 
 }
