@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jee-share-basic" />
         <module name="jee-share-utils" />
+        <module name="spring-boot-Executor" />
         <module name="spring-boot-shiro" />
       </profile>
     </annotationProcessing>
