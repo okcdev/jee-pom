@@ -24,13 +24,13 @@ public class ResultBean<T> {
 
     private int code;
 
-    private String status;
+    private String message;
 
     private T data;
 
-    public ResultBean(int code, String status, T data) {
+    public ResultBean(int code, String message, T data) {
         this.code = code;
-        this.status = status;
+        this.message = message;
         this.data = data;
     }
 
@@ -42,12 +42,12 @@ public class ResultBean<T> {
         this.code = code;
     }
 
-    public String getStatus() {
-        return status;
+    public String getMessage() {
+        return message;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public T getData() {

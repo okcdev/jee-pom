@@ -6,25 +6,20 @@
 
 package cn.feng.dev.shiro.config;
 
-import cn.feng.dev.shiro.db.UserBean;
+import cn.feng.dev.shiro.db.UserSimpleAuthorizationInfo;
 import cn.feng.dev.shiro.service.AdminService;
-import cn.feng.dev.shiro.utls.FengUtls;
+import cn.feng.dev.shiro.utls.CacheUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
-import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 
 /**
@@ -53,13 +48,15 @@ public class FengRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         //从缓存中获取对象，返回
-        String username = FengUtls.getUsername(principalCollection.toString());
+        String authKey = principalCollection.toString();
+        UserSimpleAuthorizationInfo userSimpleAuthorizationInfo = (UserSimpleAuthorizationInfo) CacheUtils.get(authKey);
+        /*String username = FengUtls.getUsername(principalCollection.toString());
         UserBean user = adminService.getUser(username);
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.addRole(user.getRole());
         Set<String> permission = new HashSet<>(Arrays.asList(user.getPermission().split(",")));
-        simpleAuthorizationInfo.addStringPermissions(permission);
-        return simpleAuthorizationInfo;
+        simpleAuthorizationInfo.addStringPermissions(permission);*/
+        return userSimpleAuthorizationInfo;
     }
 
     /**
@@ -71,8 +68,13 @@ public class FengRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String authKey = (String)authenticationToken.getCredentials();
+
+        if (CacheUtils.get(authKey) == null){ //未登录
+            throw new AuthenticationException("token invalid");
+        }
+
         // 解密获得username，用于和数据库进行对比
-        String username = FengUtls.getUsername(authKey);
+        /*String username = FengUtls.getUsername(authKey);
         if (username == null) {
             throw new AuthenticationException("token invalid");
         }
@@ -84,7 +86,7 @@ public class FengRealm extends AuthorizingRealm {
 
         if (! FengUtls.verify(authKey, username, userBean.getPassword())) {
             throw new AuthenticationException("Username or password error");
-        }
+        }*/
 
         return new SimpleAuthenticationInfo(authKey, authKey, "feng_realm");
     }

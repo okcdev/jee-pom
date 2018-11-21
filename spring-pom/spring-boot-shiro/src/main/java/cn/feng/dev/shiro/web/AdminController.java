@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 
 /**
  * @author fengtao.xue
@@ -33,12 +35,11 @@ public class AdminController {
     AdminService adminService;
 
     @RequestMapping("/login")
-    public ResultBean<String> login(@RequestParam("username") String username,
-                                     @RequestParam("password") String password) {
-        UserBean userBean = adminService.getUser(username);
-        if (userBean.getPassword().equals(password)) {
-            return new ResultBean<>(ResultBean.RESULT_SUCCESS, "Login success", FengUtls.sign(username, password));
-        } else {
+    public ResultBean<Map> login(@RequestParam("username") String username,
+                                 @RequestParam("password") String password) {
+        try {
+            return adminService.login(username, password);
+        }catch (Exception e){
             throw new UnauthorizedException();
         }
     }

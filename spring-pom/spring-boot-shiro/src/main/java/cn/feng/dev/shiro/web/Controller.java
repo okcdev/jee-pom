@@ -7,6 +7,8 @@
 package cn.feng.dev.shiro.web;
 
 import cn.feng.dev.entity.ResultBean;
+import cn.feng.dev.shiro.db.UserBean;
+import cn.feng.dev.shiro.service.AdminService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
@@ -15,6 +17,7 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +29,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
     static Logger logger = LoggerFactory.getLogger(Controller.class);
+
+    @Autowired
+    AdminService adminService;
 
     @RequestMapping("/test")
     public ResultBean<Integer> test(){
@@ -53,5 +59,11 @@ public class Controller {
     @RequiresRoles("admin")
     public ResultBean<Integer> requireRole() {
         return new ResultBean(ResultBean.RESULT_SUCCESS, "You are visiting require_role", 1);
+    }
+
+    @RequestMapping("/getUser")
+    @RequiresAuthentication
+    public ResultBean<UserBean> gerLoginUser(){
+        return adminService.getLoginUses();
     }
 }
