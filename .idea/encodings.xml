@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/spring-pom" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-pom/spring-boot-Executor" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-pom/spring-boot-shiro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket" charset="UTF-8" />
   </component>
 </project>

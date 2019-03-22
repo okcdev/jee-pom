@@ -10,11 +10,11 @@
         <module name="jee-share-utils" />
         <module name="spring-boot-Executor" />
         <module name="spring-boot-shiro" />
+        <module name="spring-boot-websocket" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-boot-examples" target="1.8" />
-      <module name="spring-boot-websocket" target="1.8" />
       <module name="spring-redis" target="1.8" />
     </bytecodeTargetLevel>
   </component>
