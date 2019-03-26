@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8325c6c7-ed28-4365-824c-bda8499d4040" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/config/WebSocketConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/web/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/web/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -54,7 +52,7 @@
       <file leaf-file-name="WebSocketServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/service/WebSocketServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
+            <state relative-caret-position="475">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
@@ -63,8 +61,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="12" lean-forward="true" selection-end-line="97" selection-end-column="7" />
+            <state relative-caret-position="361">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -72,12 +70,10 @@
       <file leaf-file-name="WebSocketConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/config/WebSocketConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="31" lean-forward="true" selection-end-line="25" />
+            <state relative-caret-position="285">
+              <caret line="21" column="31" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
-                <element signature="e#857#858#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,8 +169,8 @@
         <option value="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/service/WebSocketServer.java" />
         <option value="$PROJECT_DIR$/spring-pom/spring-boot-websocket/pom.xml" />
         <option value="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/config/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/web/Controller.java" />
+        <option value="$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/resources/static/index.html" />
       </list>
     </option>
   </component>
@@ -219,8 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -330,6 +324,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -545,12 +541,13 @@
       <workItem from="1553223403720" duration="603000" />
       <workItem from="1553241094653" duration="296000" />
       <workItem from="1553248550562" duration="33000" />
-      <workItem from="1553567232263" duration="3796000" />
+      <workItem from="1553567232263" duration="4009000" />
+      <workItem from="1553578930726" duration="313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113385000" />
+    <option name="totallyTimeSpent" value="113911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -574,8 +571,8 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32396695" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22137405" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29116684" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18070363" />
       <window_info anchor="right" id="Bean Validation" order="8" weight="0.32995737" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -875,19 +872,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/config/WebSocketConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="31" lean-forward="true" selection-end-line="25" />
+        <state relative-caret-position="285">
+          <caret line="21" column="31" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/service/WebSocketServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="475">
           <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
@@ -895,14 +890,14 @@
     <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/java/cn/feng/dev/websocket/web/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-pom/spring-boot-websocket/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="12" lean-forward="true" selection-end-line="97" selection-end-column="7" />
+        <state relative-caret-position="361">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
         </state>
       </provider>
     </entry>
